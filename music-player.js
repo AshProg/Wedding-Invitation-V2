@@ -1,4 +1,4 @@
-// Music Player for Canva Design Integration
+// Music Player for Wedding Invitation
 const bgMusic = document.getElementById('bgMusic');
 const splashScreen = document.getElementById('splashScreen');
 const enterBtn = document.getElementById('enterBtn');
@@ -64,22 +64,32 @@ function updateMusicIcon() {
     }
 }
 
-// Function to redirect to Canva immediately
-function hideSplash() {
-    // Redirect instantly to Canva site
-    window.location.replace('https://weddingnasdnasdas.my.canva.site/purple-and-green-watercolor-wedding-invitation');
+// Function to show main content
+function showMainContent() {
+    splashScreen.style.opacity = '0';
+    
+    setTimeout(() => {
+        splashScreen.style.display = 'none';
+        mainContent.classList.add('show');
+        musicControl.classList.remove('hidden');
+        
+        // Initialize scroll animations
+        initScrollAnimations();
+    }, 800);
 }
 
 // Enter button click handler
 enterBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    hideSplash();
+    startMusic();
+    showMainContent();
 });
 
 // Enter button touch handler (for mobile)
 enterBtn.addEventListener('touchstart', (e) => {
     e.preventDefault();
-    hideSplash();
+    startMusic();
+    showMainContent();
 }, { passive: false });
 
 // Music toggle button
@@ -87,20 +97,30 @@ musicToggle.addEventListener('click', toggleMusic);
 
 // Keyboard support (spacebar to toggle music)
 document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space' && !splashScreen.style.display) {
+    if (e.code === 'Space' && splashScreen.style.display === 'none') {
         e.preventDefault();
         toggleMusic();
     }
 });
 
-// Auto-play attempt on user interaction (fallback)
-document.addEventListener('click', function autoPlay() {
-    if (!isPlaying && splashScreen.style.display === 'none') {
-        bgMusic.play()
-            .then(() => {
-                isPlaying = true;
-                updateMusicIcon();
-            })
-            .catch(() => {});
-    }
-}, { once: true });
+// Scroll Animation Observer
+function initScrollAnimations() {
+    const sections = document.querySelectorAll('.fade-in-section');
+    
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+}
