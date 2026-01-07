@@ -1,0 +1,13 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+
+# Ignore large files (optional - uncomment if your music file is too large for GitHub)
+# assets/*.mp3
+
+# Ignore PDF if you don't want it in repo
+Purple and Green Watercolor Wedding Invitation.pdf

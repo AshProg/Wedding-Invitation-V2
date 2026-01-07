@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation - Canva Design</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/wedding-song.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Music Controls (floating button) -->
+    <div id="musicControl" class="music-control hidden">
+        <button id="musicToggle" class="music-toggle">
+            <span class="music-icon playing">♪</span>
+        </button>
+    </div>
+
+    <!-- Splash Screen with Music Start -->
+    <div id="splashScreen" class="splash-screen">
+        <div class="splash-content">
+            <div class="ornament">❦</div>
+            <h1 class="splash-title">You're Invited</h1>
+            <p class="splash-subtitle">to our wedding celebration</p>
+            <button id="enterBtn" class="enter-btn">
+                Open Invitation
+                <small>🔊 Tap to play music</small>
+            </button>
+            <div class="ornament">❦</div>
+        </div>
+    </div>
+
+    <!-- Main Invitation Content -->
+    <div id="mainContent" class="main-content">
+        
+        <!-- Embed Canva Published Website -->
+        <iframe 
+            id="canvaFrame"
+            src="https://weddingnasdnasdas.my.canva.site/purple-and-green-watercolor-wedding-invitation"
+            class="canva-iframe"
+            frameborder="0"
+            scrolling="yes"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+    <script src="music-player.js"></script>
+</body>
+</html>
