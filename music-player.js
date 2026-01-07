@@ -64,13 +64,10 @@ function updateMusicIcon() {
     }
 }
 
-// Function to hide splash and redirect to Canva
+// Function to redirect to Canva immediately
 function hideSplash() {
-    // Start music
-    startMusic();
-    
-    // Immediate redirect to Canva site
-    window.location.href = 'https://weddingnasdnasdas.my.canva.site/purple-and-green-watercolor-wedding-invitation';
+    // Redirect instantly to Canva site
+    window.location.replace('https://weddingnasdnasdas.my.canva.site/purple-and-green-watercolor-wedding-invitation');
 }
 
 // Enter button click handler
