@@ -126,8 +126,7 @@ body {
 /* Invitation Sections */
 .invitation-section {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin: 0;
     background: white;
     position: relative;
     overflow: hidden;
@@ -138,6 +137,7 @@ body {
     height: auto;
     display: block;
     transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
 /* Fade-in animation for sections */
